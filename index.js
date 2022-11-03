@@ -1,72 +1,29 @@
 //TEAMS
-const teamA = {
-  teamName: "teamA",
-  players: [
-    { firstName: "mike", lastName: "smith", age: 20 },
-    { firstName: "sarah", lastName: "smith", age: 24 },
-  ],
-};
+//SHORTCUT: import {} + CTR + Space zeigt alles an
+// teamA as firstTEam: benennt die funktion/variable beim import um
+import {allTeams, teamA as firstTeam} from "./modules/teams.js"
 
-const teamB = {
-  teamName: "teamB",
-  players: [
-    { firstName: "hugo", lastName: "james", age: 21 },
-    { firstName: "laura", lastName: "uru", age: 22 },
-  ],
-};
-
-const teamC = {
-  teamName: "teamC",
-  players: [
-    { firstName: "mike", lastName: "smith", age: 18 },
-    { firstName: "sarah", lastName: "james", age: 30 },
-  ],
-};
-
-const teamD = {
-  teamName: "teamD",
-  players: [
-    { firstName: "jack", lastName: "ionu", age: 29 },
-    { firstName: "matt", lastName: "otto", age: 40 },
-  ],
-};
-
-const allTeams = [teamA, teamB, teamC, teamD];
-
-console.log(allTeams);
+// import {allTeams} from "./modules/teams.js"
+console.log(allTeams)
+console.log(allTeams)
+// console.log(firstTeam)
 
 //ACTIONS
-
-const getTeamNames = (teams) => teams.map((team) => team.teamName);
-
-const getHowManyTeams = (teams) => teams.length;
-
-const getTeamPlayersFirstName = (team) =>
-  team.players.map((player) => player.firstName);
-
+// import * as actions from "./modules/actions.js"
+import {getTeamNames, getHowManyTeams, getTeamPlayersFirstName} from "./modules/actions.js"
 console.log("getTeamNames:", getTeamNames(allTeams));
 console.log("getHowManyTeams:", getHowManyTeams(allTeams));
-console.log("getTeamPlayersFirstName:", getTeamPlayersFirstName(teamA));
+console.log("getTeamPlayersFirstName:", getTeamPlayersFirstName(firstTeam));
 
-//STATISTICS
-const teamsRanking = {
-  first: "teamA",
-  second: "teamD",
-  third: "teamC",
-  fourth: "teamB",
-};
-
-const scores = {
-  teamA: 12,
-  teamD: 9,
-  teamC: 4,
-  teamB: 1,
-};
-
-//BEST TEAM
-const bestTeam = {
-  name: teamsRanking.first,
-  scores: scores.teamA,
-};
+// statistics
+import {teamsRanking, scores} from "./modules/statistics.js"
+console.log(teamsRanking)
+//bestTeam
+import bestTeam from "./modules/bestTeam.js"
 
 console.log("bestTeam:", bestTeam);
+
+//side effeccts:
+//wie importieren ohne variablennamen:
+//macht einfach den alert.. 
+// import "./modules/side-effects.js"
